@@ -9,37 +9,37 @@ interface StatusBadgeProps {
 
 const statusConfig = {
   pending: {
-    label: "Pending",
+    label: "In Attesa",
     variant: "secondary" as const,
     icon: Clock,
     className: "bg-status-pending text-status-pending-foreground border-status-pending-foreground/20"
   },
   production: {
-    label: "In Production",
+    label: "In Produzione",
     variant: "default" as const,
     icon: Package,
     className: "bg-status-in-progress text-status-in-progress-foreground border-status-in-progress-foreground/20"
   },
   departed: {
-    label: "Departed",
+    label: "Partito",
     variant: "default" as const,
     icon: Ship,
     className: "bg-status-in-progress text-status-in-progress-foreground border-status-in-progress-foreground/20"
   },
   customs: {
-    label: "Customs",
+    label: "Dogana",
     variant: "default" as const,
     icon: MapPin,
     className: "bg-status-in-progress text-status-in-progress-foreground border-status-in-progress-foreground/20"
   },
   arrived: {
-    label: "Arrived",
+    label: "Arrivato",
     variant: "default" as const,
     icon: CheckCircle,
     className: "bg-status-completed text-status-completed-foreground border-status-completed-foreground/20"
   },
   delayed: {
-    label: "Delayed",
+    label: "Ritardato",
     variant: "destructive" as const,
     icon: AlertTriangle,
     className: "bg-status-delayed text-status-delayed-foreground border-status-delayed-foreground/20"

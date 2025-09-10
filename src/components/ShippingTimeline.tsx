@@ -10,7 +10,7 @@ export function ShippingTimeline({ order }: ShippingTimelineProps) {
   const timelineSteps = [
     {
       id: 'production',
-      label: 'Production',
+      label: 'Produzione',
       icon: Package,
       startDate: order.timeline.productionStart,
       endDate: order.timeline.productionEnd,
@@ -18,7 +18,7 @@ export function ShippingTimeline({ order }: ShippingTimelineProps) {
     },
     {
       id: 'departure',
-      label: 'Port Departure',
+      label: 'Partenza Porto',
       icon: Ship,
       startDate: order.timeline.departurePort,
       endDate: null,
@@ -26,7 +26,7 @@ export function ShippingTimeline({ order }: ShippingTimelineProps) {
     },
     {
       id: 'customs',
-      label: 'Customs Clearance',
+      label: 'Sdoganamento',
       icon: MapPin,
       startDate: order.timeline.customsClearance,
       endDate: null,
@@ -34,7 +34,7 @@ export function ShippingTimeline({ order }: ShippingTimelineProps) {
     },
     {
       id: 'arrival',
-      label: 'Warehouse Arrival',
+      label: 'Arrivo Magazzino',
       icon: Warehouse,
       startDate: order.timeline.actualArrival || order.timeline.estimatedArrival,
       endDate: null,
@@ -62,7 +62,7 @@ export function ShippingTimeline({ order }: ShippingTimelineProps) {
 
   return (
     <div className="space-y-6">
-      <h3 className="text-lg font-semibold text-card-foreground">Shipping Timeline</h3>
+      <h3 className="text-lg font-semibold text-card-foreground">Cronologia Spedizione</h3>
       
       <div className="relative">
         <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-border"></div>
@@ -110,7 +110,7 @@ export function ShippingTimeline({ order }: ShippingTimelineProps) {
                   
                   {step.endDate && step.startDate && (
                     <p className="text-xs text-muted-foreground mt-1">
-                      Duration: {Math.ceil((step.endDate.getTime() - step.startDate.getTime()) / (1000 * 60 * 60 * 24))} days
+                      Durata: {Math.ceil((step.endDate.getTime() - step.startDate.getTime()) / (1000 * 60 * 60 * 24))} giorni
                     </p>
                   )}
                 </div>

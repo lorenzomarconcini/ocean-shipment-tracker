@@ -61,12 +61,12 @@ const Index = () => {
             <div className="flex items-center gap-3">
               <Ship className="h-8 w-8 text-primary-foreground" />
               <h1 className="text-xl font-bold text-primary-foreground">
-                Maritime Logistics Dashboard
+                Dashboard Logistica Marittima
               </h1>
             </div>
             <Button variant="secondary" size="sm" className="bg-white/10 text-primary-foreground border-white/20 hover:bg-white/20">
               <Plus className="h-4 w-4 mr-2" />
-              New Order
+              Nuovo Ordine
             </Button>
           </div>
         </div>
@@ -77,23 +77,23 @@ const Index = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
           <div className="bg-card rounded-radius-lg border border-border p-4 shadow-ship">
             <div className="text-2xl font-bold text-card-foreground">{orders.length}</div>
-            <div className="text-sm text-muted-foreground">Total Orders</div>
+            <div className="text-sm text-muted-foreground">Ordini Totali</div>
           </div>
           <div className="bg-card rounded-radius-lg border border-border p-4 shadow-ship">
             <div className="text-2xl font-bold text-status-in-progress-foreground">{statusCounts.production || 0}</div>
-            <div className="text-sm text-muted-foreground">In Production</div>
+            <div className="text-sm text-muted-foreground">In Produzione</div>
           </div>
           <div className="bg-card rounded-radius-lg border border-border p-4 shadow-ship">
             <div className="text-2xl font-bold text-status-in-progress-foreground">{statusCounts.departed || 0}</div>
-            <div className="text-sm text-muted-foreground">In Transit</div>
+            <div className="text-sm text-muted-foreground">In Transito</div>
           </div>
           <div className="bg-card rounded-radius-lg border border-border p-4 shadow-ship">
             <div className="text-2xl font-bold text-status-completed-foreground">{statusCounts.arrived || 0}</div>
-            <div className="text-sm text-muted-foreground">Arrived</div>
+            <div className="text-sm text-muted-foreground">Arrivati</div>
           </div>
           <div className="bg-card rounded-radius-lg border border-border p-4 shadow-ship">
             <div className="text-2xl font-bold text-status-delayed-foreground">{statusCounts.delayed || 0}</div>
-            <div className="text-sm text-muted-foreground">Delayed</div>
+            <div className="text-sm text-muted-foreground">Ritardati</div>
           </div>
         </div>
 
@@ -102,7 +102,7 @@ const Index = () => {
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search by order number, supplier, or description..."
+              placeholder="Cerca per numero ordine, fornitore o descrizione..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10"
@@ -114,13 +114,13 @@ const Index = () => {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Statuses</SelectItem>
-              <SelectItem value="pending">Pending</SelectItem>
-              <SelectItem value="production">Production</SelectItem>
-              <SelectItem value="departed">Departed</SelectItem>
-              <SelectItem value="customs">Customs</SelectItem>
-              <SelectItem value="arrived">Arrived</SelectItem>
-              <SelectItem value="delayed">Delayed</SelectItem>
+              <SelectItem value="all">Tutti gli Stati</SelectItem>
+              <SelectItem value="pending">In Attesa</SelectItem>
+              <SelectItem value="production">In Produzione</SelectItem>
+              <SelectItem value="departed">Partito</SelectItem>
+              <SelectItem value="customs">Dogana</SelectItem>
+              <SelectItem value="arrived">Arrivato</SelectItem>
+              <SelectItem value="delayed">Ritardato</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -139,8 +139,8 @@ const Index = () => {
         {filteredOrders.length === 0 && (
           <div className="text-center py-12">
             <Ship className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-card-foreground mb-2">No orders found</h3>
-            <p className="text-muted-foreground">Try adjusting your search criteria</p>
+            <h3 className="text-lg font-medium text-card-foreground mb-2">Nessun ordine trovato</h3>
+            <p className="text-muted-foreground">Prova ad aggiustare i criteri di ricerca</p>
           </div>
         )}
       </main>
@@ -152,7 +152,7 @@ const Index = () => {
             <>
               <DialogHeader>
                 <DialogTitle className="text-xl">
-                  Purchase Order #{selectedOrder.orderNumber}
+                  Ordine d'Acquisto #{selectedOrder.orderNumber}
                 </DialogTitle>
               </DialogHeader>
               
@@ -171,25 +171,25 @@ const Index = () => {
                   
                   {/* Order Summary */}
                   <div className="bg-muted rounded-radius-lg p-4">
-                    <h4 className="font-semibold text-card-foreground mb-3">Order Summary</h4>
+                    <h4 className="font-semibold text-card-foreground mb-3">Riepilogo Ordine</h4>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Supplier:</span>
+                        <span className="text-muted-foreground">Fornitore:</span>
                         <span className="text-card-foreground">{selectedOrder.supplier.name}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Total Value:</span>
+                        <span className="text-muted-foreground">Valore Totale:</span>
                         <span className="text-card-foreground font-medium">
                           ${selectedOrder.totalValue.toLocaleString()} {selectedOrder.currency}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Route:</span>
+                        <span className="text-muted-foreground">Rotta:</span>
                         <span className="text-card-foreground">{selectedOrder.ports.departure} → {selectedOrder.ports.arrival}</span>
                       </div>
                       {selectedOrder.vessel && (
                         <div className="flex justify-between">
-                          <span className="text-muted-foreground">Vessel:</span>
+                          <span className="text-muted-foreground">Nave:</span>
                           <span className="text-card-foreground">{selectedOrder.vessel.name} ({selectedOrder.vessel.voyage})</span>
                         </div>
                       )}

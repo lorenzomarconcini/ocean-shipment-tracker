@@ -13,7 +13,7 @@ interface PurchaseOrderCardProps {
 
 export function PurchaseOrderCard({ order, onViewDetails }: PurchaseOrderCardProps) {
   const formatCurrency = (amount: number, currency: string) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('it-IT', {
       style: 'currency',
       currency: currency
     }).format(amount);
@@ -21,10 +21,10 @@ export function PurchaseOrderCard({ order, onViewDetails }: PurchaseOrderCardPro
 
   const getNextMilestone = () => {
     const { timeline } = order;
-    if (!timeline.productionStart) return { label: "Production Start", date: timeline.productionStart };
-    if (!timeline.departurePort) return { label: "Port Departure", date: timeline.departurePort };
-    if (!timeline.customsClearance) return { label: "Customs Clearance", date: timeline.customsClearance };
-    if (!timeline.actualArrival) return { label: "Estimated Arrival", date: timeline.estimatedArrival };
+    if (!timeline.productionStart) return { label: "Inizio Produzione", date: timeline.productionStart };
+    if (!timeline.departurePort) return { label: "Partenza Porto", date: timeline.departurePort };
+    if (!timeline.customsClearance) return { label: "Sdoganamento", date: timeline.customsClearance };
+    if (!timeline.actualArrival) return { label: "Arrivo Stimato", date: timeline.estimatedArrival };
     return null;
   };
 
@@ -50,46 +50,46 @@ export function PurchaseOrderCard({ order, onViewDetails }: PurchaseOrderCardPro
       </CardHeader>
 
       <CardContent className="space-y-4">
-        <div className="flex items-center justify-between text-sm">
-          <span className="text-muted-foreground">Total Value</span>
-          <span className="font-semibold text-card-foreground">
-            {formatCurrency(order.totalValue, order.currency)}
-          </span>
-        </div>
-
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <MapPin className="h-4 w-4" />
-            <span>{order.ports.departure} → {order.ports.arrival}</span>
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-muted-foreground">Valore Totale</span>
+            <span className="font-semibold text-card-foreground">
+              {formatCurrency(order.totalValue, order.currency)}
+            </span>
           </div>
-          
-          {nextMilestone && (
+
+          <div className="space-y-2">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Calendar className="h-4 w-4" />
-              <span>
-                Next: {nextMilestone.label}
-                {nextMilestone.date && ` - ${format(nextMilestone.date, 'MMM dd, yyyy')}`}
-              </span>
+              <MapPin className="h-4 w-4" />
+              <span>{order.ports.departure} → {order.ports.arrival}</span>
             </div>
-          )}
-          
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <FileText className="h-4 w-4" />
-            <span>{order.documents.length} documents</span>
+            
+            {nextMilestone && (
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Calendar className="h-4 w-4" />
+                <span>
+                  Prossimo: {nextMilestone.label}
+                  {nextMilestone.date && ` - ${format(nextMilestone.date, 'dd MMM yyyy')}`}
+                </span>
+              </div>
+            )}
+            
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <FileText className="h-4 w-4" />
+              <span>{order.documents.length} documenti</span>
+            </div>
           </div>
-        </div>
 
-        <div className="pt-2">
-          <Button 
-            onClick={() => onViewDetails(order.id)}
-            variant="outline" 
-            size="sm" 
-            className="w-full bg-gradient-ocean text-primary-foreground border-none hover:opacity-90"
-          >
-            <Eye className="h-4 w-4 mr-2" />
-            View Details
-          </Button>
-        </div>
+          <div className="pt-2">
+            <Button 
+              onClick={() => onViewDetails(order.id)}
+              variant="outline" 
+              size="sm" 
+              className="w-full bg-gradient-ocean text-primary-foreground border-none hover:opacity-90"
+            >
+              <Eye className="h-4 w-4 mr-2" />
+              Visualizza Dettagli
+            </Button>
+          </div>
       </CardContent>
     </Card>
   );

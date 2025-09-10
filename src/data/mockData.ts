@@ -4,21 +4,21 @@ import { PurchaseOrder, Document } from "@/types/purchase-order";
 const mockDocuments: Document[] = [
   {
     id: "doc-1",
-    name: "Commercial Invoice CI-2024-001.pdf",
+    name: "Fattura Commerciale CI-2024-001.pdf",
     type: "commercial-invoice",
     uploadedAt: new Date("2024-01-15"),
     size: "245 KB"
   },
   {
     id: "doc-2", 
-    name: "Packing List PL-2024-001.pdf",
+    name: "Lista Imballaggio PL-2024-001.pdf",
     type: "packing-list",
     uploadedAt: new Date("2024-01-16"),
     size: "156 KB"
   },
   {
     id: "doc-3",
-    name: "Proforma Invoice PI-2024-001.pdf", 
+    name: "Fattura Proforma PI-2024-001.pdf", 
     type: "proforma-invoice",
     uploadedAt: new Date("2024-01-10"),
     size: "198 KB"
@@ -56,7 +56,7 @@ export const mockPurchaseOrders: PurchaseOrder[] = [
       departure: "Shanghai, China",
       arrival: "Los Angeles, USA"
     },
-    description: "Electronic components and assembly parts"
+    description: "Componenti elettronici e parti di assemblaggio"
   },
   {
     id: "po-2",
@@ -81,7 +81,7 @@ export const mockPurchaseOrders: PurchaseOrder[] = [
     documents: [
       {
         id: "doc-4",
-        name: "Proforma Invoice PI-2024-002.pdf",
+        name: "Fattura Proforma PI-2024-002.pdf",
         type: "proforma-invoice", 
         uploadedAt: new Date("2024-01-18"),
         size: "203 KB"
@@ -92,7 +92,7 @@ export const mockPurchaseOrders: PurchaseOrder[] = [
       departure: "Ho Chi Minh City, Vietnam",
       arrival: "Long Beach, USA"
     },
-    description: "Textile products and garments"
+    description: "Prodotti tessili e abbigliamento"
   },
   {
     id: "po-3",
@@ -117,14 +117,14 @@ export const mockPurchaseOrders: PurchaseOrder[] = [
     documents: [
       {
         id: "doc-5",
-        name: "Bill of Lading BOL-2024-003.pdf",
+        name: "Polizza di Carico BOL-2024-003.pdf",
         type: "bill-of-lading",
         uploadedAt: new Date("2024-02-03"),
         size: "167 KB"
       },
       {
         id: "doc-6",
-        name: "Commercial Invoice CI-2024-003.pdf",
+        name: "Fattura Commerciale CI-2024-003.pdf",
         type: "commercial-invoice",
         uploadedAt: new Date("2024-02-02"), 
         size: "234 KB"
@@ -138,7 +138,7 @@ export const mockPurchaseOrders: PurchaseOrder[] = [
       departure: "Mumbai, India",
       arrival: "Newark, USA"
     },
-    description: "Machinery parts and tools"
+    description: "Parti di macchinari e utensili"
   },
   {
     id: "po-4",
@@ -163,7 +163,7 @@ export const mockPurchaseOrders: PurchaseOrder[] = [
     documents: [
       {
         id: "doc-7",
-        name: "Delivery Receipt DR-2024-004.pdf",
+        name: "Ricevuta di Consegna DR-2024-004.pdf",
         type: "other",
         uploadedAt: new Date("2024-02-14"),
         size: "98 KB"
@@ -177,7 +177,7 @@ export const mockPurchaseOrders: PurchaseOrder[] = [
       departure: "Laem Chabang, Thailand",
       arrival: "Seattle, USA"
     },
-    description: "Food processing equipment"
+    description: "Attrezzature per lavorazione alimentare"
   },
   {
     id: "po-5",
@@ -202,7 +202,7 @@ export const mockPurchaseOrders: PurchaseOrder[] = [
     documents: [
       {
         id: "doc-8",
-        name: "Delay Notification DN-2024-005.pdf",
+        name: "Notifica Ritardo DN-2024-005.pdf",
         type: "other",
         uploadedAt: new Date("2024-02-25"),
         size: "143 KB"
@@ -216,6 +216,6 @@ export const mockPurchaseOrders: PurchaseOrder[] = [
       departure: "Busan, South Korea", 
       arrival: "Oakland, USA"
     },
-    description: "Consumer electronics and displays"
+    description: "Elettronica di consumo e display"
   }
 ];

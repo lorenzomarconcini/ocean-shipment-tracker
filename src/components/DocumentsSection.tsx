@@ -12,11 +12,11 @@ interface DocumentsSectionProps {
 }
 
 const documentTypeLabels = {
-  'commercial-invoice': 'Commercial Invoice',
-  'packing-list': 'Packing List',
-  'proforma-invoice': 'Proforma Invoice',
-  'bill-of-lading': 'Bill of Lading',
-  'other': 'Other Document'
+  'commercial-invoice': 'Fattura Commerciale',
+  'packing-list': 'Lista Imballaggio',
+  'proforma-invoice': 'Fattura Proforma',
+  'bill-of-lading': 'Polizza di Carico',
+  'other': 'Altro Documento'
 };
 
 const documentTypeColors = {
@@ -37,11 +37,11 @@ export function DocumentsSection({
     <Card>
       <CardHeader>
         <div className="flex items-center justify-between">
-          <CardTitle className="text-lg font-semibold">Documents</CardTitle>
+          <CardTitle className="text-lg font-semibold">Documenti</CardTitle>
           {onUploadDocument && (
             <Button onClick={onUploadDocument} size="sm" variant="outline">
               <Upload className="h-4 w-4 mr-2" />
-              Upload
+              Carica
             </Button>
           )}
         </div>
@@ -51,7 +51,7 @@ export function DocumentsSection({
         {documents.length === 0 ? (
           <div className="text-center py-8">
             <FileText className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-            <p className="text-muted-foreground">No documents uploaded yet</p>
+            <p className="text-muted-foreground">Nessun documento caricato</p>
           </div>
         ) : (
           <div className="space-y-3">
@@ -78,7 +78,7 @@ export function DocumentsSection({
                     
                     <div className="flex items-center gap-4 text-xs text-muted-foreground">
                       <span>
-                        Uploaded {doc.uploadedAt.toLocaleDateString()}
+                        Caricato il {doc.uploadedAt.toLocaleDateString('it-IT')}
                       </span>
                       {doc.size && (
                         <span>{doc.size}</span>
