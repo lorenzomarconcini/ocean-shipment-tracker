@@ -6,39 +6,39 @@
 
 @layer base {
   :root {
-    --background: 248 250 252;
-    --foreground: 226 232 240;
+    --background: 0 0% 98%;
+    --foreground: 15 23% 42%;
 
-    --card: 255 255 255;
-    --card-foreground: 15 23 42;
+    --card: 0 0% 100%;
+    --card-foreground: 15 23% 42%;
 
-    --popover: 255 255 255;
-    --popover-foreground: 15 23 42;
+    --popover: 0 0% 100%;
+    --popover-foreground: 15 23% 42%;
 
     --primary: 210 40% 30%;
-    --primary-foreground: 248 250 252;
+    --primary-foreground: 210 40% 98%;
     --primary-glow: 210 35% 45%;
 
     --secondary: 210 20% 85%;
-    --secondary-foreground: 15 23 42;
+    --secondary-foreground: 15 23% 42%;
 
     --muted: 210 20% 95%;
-    --muted-foreground: 100 116 139;
+    --muted-foreground: 215 16% 47%;
 
     --accent: 210 25% 55%;
-    --accent-foreground: 248 250 252;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 248 250 252;
+    --destructive-foreground: 210 40% 98%;
 
     --success: 142 76% 36%;
-    --success-foreground: 248 250 252;
+    --success-foreground: 210 40% 98%;
 
     --warning: 45 93% 47%;
-    --warning-foreground: 15 23 42;
+    --warning-foreground: 15 23% 42%;
 
-    --border: 226 232 240;
-    --input: 226 232 240;
+    --border: 0 0% 86%;
+    --input: 0 0% 96%;
     --ring: 210 40% 30%;
 
     /* Maritime gradients and effects */
@@ -52,13 +52,13 @@
     --shadow-depth: 0 20px 60px -20px hsl(var(--primary) / 0.2);
     
     /* Status colors for shipping stages */
-    --status-pending: 251 91% 95%;
-    --status-pending-foreground: 244 63% 69%;
-    --status-in-progress: 210 40% 95%;
+    --status-pending: 0 0% 96%;
+    --status-pending-foreground: 0 0% 47%;
+    --status-in-progress: 216 100% 95%;
     --status-in-progress-foreground: 210 40% 30%;
-    --status-completed: 142 76% 95%;
+    --status-completed: 120 100% 95%;
     --status-completed-foreground: 142 76% 36%;
-    --status-delayed: 0 84% 95%;
+    --status-delayed: 0 100% 97%;
     --status-delayed-foreground: 0 84% 60%;
 
     --radius: 0.75rem;
@@ -69,7 +69,7 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-    --sidebar-background: 248 250 252;
+    --sidebar-background: 210 40% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
 
@@ -87,48 +87,48 @@
   }
 
   .dark {
-    --background: 15 23 42;
-    --foreground: 248 250 252;
+    --background: 15 23% 42%;
+    --foreground: 210 40% 98%;
 
-    --card: 30 41 59;
-    --card-foreground: 248 250 252;
+    --card: 30 41% 59%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 30 41 59;
-    --popover-foreground: 248 250 252;
+    --popover: 30 41% 59%;
+    --popover-foreground: 210 40% 98%;
 
     --primary: 199 89% 48%;
-    --primary-foreground: 15 23 42;
+    --primary-foreground: 15 23% 42%;
     --primary-glow: 217 91% 60%;
 
-    --secondary: 51 65 85;
-    --secondary-foreground: 248 250 252;
+    --secondary: 51 65% 85%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 51 65 85;
-    --muted-foreground: 148 163 184;
+    --muted: 51 65% 85%;
+    --muted-foreground: 215 20% 65%;
 
     --accent: 217 91% 60%;
-    --accent-foreground: 15 23 42;
+    --accent-foreground: 15 23% 42%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 248 250 252;
+    --destructive-foreground: 210 40% 98%;
 
     --success: 142 76% 36%;
-    --success-foreground: 248 250 252;
+    --success-foreground: 210 40% 98%;
 
     --warning: 45 93% 47%;
-    --warning-foreground: 15 23 42;
+    --warning-foreground: 15 23% 42%;
 
-    --border: 51 65 85;
-    --input: 51 65 85;
+    --border: 51 65% 85%;
+    --input: 51 65% 85%;
     --ring: 199 89% 48%;
 
-    --sidebar-background: 15 23 42;
-    --sidebar-foreground: 248 250 252;
+    --sidebar-background: 15 23% 42%;
+    --sidebar-foreground: 210 40% 98%;
     --sidebar-primary: 199 89% 48%;
-    --sidebar-primary-foreground: 15 23 42;
-    --sidebar-accent: 51 65 85;
-    --sidebar-accent-foreground: 248 250 252;
-    --sidebar-border: 51 65 85;
+    --sidebar-primary-foreground: 15 23% 42%;
+    --sidebar-accent: 51 65% 85%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 51 65% 85%;
     --sidebar-ring: 217 91% 60%;
   }
 }
